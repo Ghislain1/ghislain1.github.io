@@ -34,7 +34,7 @@ jobs:
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist
+          name: dist-1
           path: ghis/dist
 
       - name: Refresh Docs Folder (using  PUSH)
@@ -45,7 +45,7 @@ jobs:
               date > generated.txt
               cd ghis
               rm -rf docs/*            
-              cp -vr dist/. docs/
+              cp -vr dist/* docs/
               cd docs                         
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
