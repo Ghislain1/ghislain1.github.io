@@ -15,6 +15,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: _SOURCE-Contents #  Where artifact is stored
-          path: _Target # Download path output
+          path: ${{ github.repository }}/_Target # Download path output
         
 
