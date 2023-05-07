@@ -11,10 +11,20 @@ jobs:
         with:
           name: _SOURCE-Contents
           path: _Source
-      - name: Update _Target Folder in Main Repro
+      - name: Update _Target Folder in Main Repro(Obsolete)
         uses: actions/download-artifact@v3
         with:
           name: _SOURCE-Contents #  Where artifact is stored
-          path: ${{ github.repository }}/_Target # Download path output
+          path: _Target # Download path output
+      - name: Refresh Docs File(with Commit)
+        run : |
+              date > generated.txt
+              git config user.name github-actions
+              git config user.email github-actions@github.com
+              git add .
+              git commit -m "generated"
+              git push
+
+            
         
 
