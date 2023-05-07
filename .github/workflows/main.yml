@@ -1,0 +1,15 @@
+name: "Change Docs Folder"
+on: push
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Archive Production Artifacts
+        uses: actions/upload-artifacts@v3
+        with:
+          name: _SOURCE-Contents
+          path: _Source
+        
+
