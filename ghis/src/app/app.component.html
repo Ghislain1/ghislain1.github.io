@@ -1,6 +1,11 @@
 <mat-sidenav-container>
-  <app-header></app-header>
-  <main>
+
+  <mat-sidenav>
+    <app-header></app-header>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
     <router-outlet></router-outlet>
-  </main>
+</mat-sidenav-content>
+
 </mat-sidenav-container>
