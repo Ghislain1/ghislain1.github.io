@@ -17,7 +17,7 @@ jobs:
       - name: Change Working Directory
         run: |
              cd ghis
-             Dir
+             ls
 
       - name: Install Dependencies
         run: npm install
