@@ -1,6 +1,6 @@
-[My Website]([docs](https://ghislain1.github.io/))
+[My Website](https://ghislain1.github.io/)
 
-
+https://<user_name>.github.io/<project_name>
 
 
 **Table of Contents**

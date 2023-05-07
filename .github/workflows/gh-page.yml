@@ -29,7 +29,7 @@ jobs:
         run: |
              cd ghis
              ls
-             npm run build:prod
+             npm run build:github-page
         
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
@@ -37,14 +37,14 @@ jobs:
           name: dist
           path: ghis/dist
 
-      - name: Refresh Docs Folder(using  PUSH)
+      - name: Refresh Docs Folder (using  PUSH)
         env: 
           CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
               date > generated.txt
               rm -rf docs
-              cp -vr ghis/dist/ghis/. docs/
+              cp -vr ghis/docs/ghis/. docs/
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
