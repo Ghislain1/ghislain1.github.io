@@ -45,6 +45,8 @@ jobs:
               date > generated.txt
               rm -rf docs
               cp -vr ghis/docs/ghis/. docs/
+              cd docs
+              cp  index.html 404.html
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
