@@ -23,7 +23,7 @@ jobs:
           CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
-              date > generated.txt
+              date > _Target/generated.txt
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
