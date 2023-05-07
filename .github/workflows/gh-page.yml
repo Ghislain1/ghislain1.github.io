@@ -46,7 +46,7 @@ jobs:
               cd ghis                
               cd dist
               dir         
-              cp -vr ghis/dist/ghis/. docs/
+              cp -vr dist/. docs/
               cd docs
               cp  index.html 404.html
               cd..
