@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
-    "build:github-page": "ng build --configuration production --output-path docs --base-href ghislain1.github.io",
+    "build:github-page": "ng build --configuration production --output-path docs --base-href ghislain1.github.io && cp index.html 404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
