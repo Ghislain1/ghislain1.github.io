@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.CustomersModule)
+    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   },
   {
     path: 'contact',
-    loadChildren: () => import('./about/about.module').then(m => m.OrdersModule)
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   }
 ];
 
