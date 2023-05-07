@@ -39,7 +39,7 @@ jobs:
 
       - name: Refresh Docs Folder (using  PUSH)
         env: 
-          CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
+          CI_COMMIT_MESSAGE: CI Build Artifacts for Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
               date > generated.txt
