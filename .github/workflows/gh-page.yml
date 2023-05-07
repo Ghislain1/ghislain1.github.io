@@ -42,10 +42,9 @@ jobs:
           CI_COMMIT_MESSAGE: CI Build Artifacts for Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
-              date > generated.txt
-              cd ghis
-              rm -rf docs/*            
-              cp -vr dist/* docs                       
+              date > generated.txt            
+              rm -rf ghis/docs/*            
+              cp -vr ghis/dist/* docs                       
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               dir
