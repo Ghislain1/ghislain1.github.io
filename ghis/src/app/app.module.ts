@@ -3,6 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+const routes: Routes = [
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then(m => m.CustomersModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./about/about.module').then(m => m.OrdersModule)
+  }
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
