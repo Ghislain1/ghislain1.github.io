@@ -43,6 +43,7 @@ jobs:
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
               date > generated.txt
+              rm -rf docs
               cp -vr ghis/dist/ghis/. docs/
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
