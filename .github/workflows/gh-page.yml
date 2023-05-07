@@ -34,8 +34,8 @@ jobs:
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist
-          path: ghis/dist
+          name: docs
+          path: ghis/docs
 
       - name: Refresh Docs Folder (using  PUSH)
         env: 
