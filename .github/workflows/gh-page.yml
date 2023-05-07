@@ -42,7 +42,11 @@ jobs:
           CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
-              date > generated.txt            
+              date > generated.txt
+              cd ghis
+              dir   
+              cd dist
+              dir         
               cp -vr ghis/dist/ghis/. docs/
               cd docs
               cp  index.html 404.html
