@@ -26,7 +26,10 @@ jobs:
              npm install
 
       - name: Build in Production
-        run: npm run build:prod
+        run: |
+             cd ghis
+             ls
+             npm run build:prod
         
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
