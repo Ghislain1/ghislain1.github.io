@@ -1,5 +1,7 @@
 name: "Change Docs Folder"
 on: push
+permissions:
+  contents: write # Able to push to master like you want
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -23,9 +25,8 @@ jobs:
         run : |
               date > generated.txt
               git config user.name Ghislain1
-              git config user.email gzeleu@outlook.de
-              git add .
-              git commit -m "generated"
+              git config user.email gzeleu@outlook.de         
+              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
               git push
  
 
