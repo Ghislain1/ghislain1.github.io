@@ -3,7 +3,7 @@ on: push
 permissions:
   contents: write # Able to push to master like you want
 jobs:
-  build_and_test:
+  build_and_updateDocs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -25,8 +25,9 @@ jobs:
         run : |
               date > generated.txt
               git config user.name Ghislain1
-              git config user.email gzeleu@outlook.de         
-              git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+              git config user.email gzeleu@outlook.de   
+              git add .      
+              git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"
               git push
  
 
