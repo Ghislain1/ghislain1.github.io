@@ -11,5 +11,10 @@ jobs:
         with:
           name: _SOURCE-Contents
           path: _Source
+      - name: Update _Target Folder in Main Repro
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          path: _Target
         
 
