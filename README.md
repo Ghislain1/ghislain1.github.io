@@ -2,6 +2,7 @@
 
 https://<user_name>.github.io/<project_name>
 
+[Simple Insp!](https://lokkeestudios.com/) -- Please follow it
 
 **Table of Contents**
 - [Intro](#intro)
