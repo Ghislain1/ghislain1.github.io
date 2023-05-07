@@ -20,7 +20,10 @@ jobs:
              ls
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+             cd ghis
+             ls
+             npm install
 
       - name: Build in Production
         run: npm run build:prod
