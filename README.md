@@ -4,6 +4,8 @@ https://<user_name>.github.io/<project_name>
 
 [Simple Insp!](https://lokkeestudios.com/) -- Please follow it
 
+[Neben JObs](https://code-maze.com/write-for-codemaze/?source=content) - get paid!
+
 **Table of Contents**
 - [Intro](#intro)
 - [Stacks](#stacks)
