@@ -45,8 +45,7 @@ jobs:
               date > generated.txt
               cd ghis
               rm -rf docs/*            
-              cp -vr dist/* docs/
-              cd docs                         
+              cp -vr dist/* docs                       
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
