@@ -1,4 +1,4 @@
-name: "Change Docs Folder"
+name: "GitHub Page"
 on: push
 permissions:
   contents: write # Able to push to master like you want
@@ -8,22 +8,27 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+      
+      - name: SetUp NodeJs
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 18
+
+      - name: Install Dependencies
+        run: npm install
+        
       - name: Archive Production Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: _SOURCE-Contents
-          path: _Source
-      - name: Update _Target Folder in Main Repro(Obsolete)
-        uses: actions/download-artifact@v3
-        with:
-          name: _SOURCE-Contents #  Where artifact is stored
-          path: _Target # Download path output
-      - name: Refresh Docs File(with Commit)
+          name: dist
+          path: dist
+
+      - name: Refresh Docs Folder(using  PUSH)
         env: 
           CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
-              date > _Target/generated.txt
+              date > dist/generated.txt
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
