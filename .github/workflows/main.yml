@@ -17,17 +17,17 @@ jobs:
           name: _SOURCE-Contents #  Where artifact is stored
           path: _Target # Download path output
       - name: Refresh Docs File(with Commit)
+        env: 
+          CI_COMMIT_MESSAGE: CI Build Artifacts Only Docs
+          CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
               date > generated.txt
               git config user.name Ghislain1
-              git config user.email github-actions@github.com
+              git config user.email gzeleu@outlook.de
               git add .
               git commit -m "generated"
-      - name: Push changes(Only into)
-        uses: ad-m/github-push-action@master
-        with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         branch: ${{ github.ref }}
+              git push
+ 
 
             
         
