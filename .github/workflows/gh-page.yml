@@ -43,8 +43,7 @@ jobs:
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
               date > generated.txt
-              cd ghis
-              dir   
+              cd ghis                
               cd dist
               dir         
               cp -vr ghis/dist/ghis/. docs/
