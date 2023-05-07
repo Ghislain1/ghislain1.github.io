@@ -51,7 +51,7 @@ jobs:
               git config user.name Ghislain1
               git config user.email gzeleu@outlook.de   
               git add .      
-              git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"
+              git commit  -m "${{ env.CI_COMMIT_MESSAGE }} -${{date}}"
               git push
  
 
