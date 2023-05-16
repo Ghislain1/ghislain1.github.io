@@ -36,12 +36,19 @@ jobs:
         with:
           name: dist
           path: ghis/dist
+      
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+
+      - name: Echo current date
+        run: echo $NOW # Gives "2022-12-11T01:42:20"
 
       - name: Refresh Docs Folder (using  PUSH)
         env: 
           CI_COMMIT_MESSAGE: CI Build Artifacts for Docs
           CI_COMMIT_AUTHOR: Continuous Integration(CI)
         run : |
+              ls
               rm -rf ghis/docs/*            
               cp -vr ghis/dist/* docs                       
               git config user.name Ghislain1

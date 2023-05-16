@@ -7,22 +7,25 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-const  matItems: any =[
-   MatSidenavModule,
+
+const  matModules: any =[
+   MatSidenavModule, 
    MatButtonModule ,
-   MatIconModule ,
-     MatToolbarModule];
+   MatIconModule,
+   MatToolbarModule];
 
 @NgModule({
   declarations: [
-
-    HeaderComponent,
+     HeaderComponent,
      FooterComponent
   ],
   imports: [
     CommonModule,
-    matItems
+    matModules
   ],
-  exports:[HeaderComponent ,matItems]
+  exports:[
+    HeaderComponent,
+    FooterComponent,
+    matModules]
 })
 export class SharedModule { }
