@@ -25,6 +25,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
     RouterModule.forRoot(routes),
     SharedModule
   ],
