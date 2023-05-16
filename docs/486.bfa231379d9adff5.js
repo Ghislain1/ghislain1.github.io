@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkghis=self.webpackChunkghis||[]).push([[486],{486:(d,t,o)=>{o.r(t),o.d(t,{ContactModule:()=>c});var a=o(755),u=o(223);let c=(()=>{class n{}return n.\u0275fac=function(s){return new(s||n)},n.\u0275mod=u.oAB({type:n}),n.\u0275inj=u.cJS({imports:[a.ez]}),n})()}}]);
