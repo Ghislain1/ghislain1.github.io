@@ -41,7 +41,9 @@ jobs:
         run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
 
       - name: Echo current date
-        run:  $NOW > geerated.txt # Gives "2022-12-11T01:42:20"
+        run : |
+              date > generated.txt 
+              echo $NOW  
 
       - name: Refresh Docs Folder (using  PUSH)
         env: 
