@@ -55,8 +55,8 @@ jobs:
               git add .      
               git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"           
               cp -vr ghis/dist/* docs                       
-              git config user.name Ghislain1
-              git config user.email gzeleu@outlook.de   
+              git config  --global user.name Ghislain1
+              git config  --global user.email gzeleu@outlook.de   
               dir
               git add .      
               git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"
