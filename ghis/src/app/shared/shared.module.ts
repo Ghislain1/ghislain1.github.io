@@ -9,6 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 const  matModules: any =[
    MatSidenavModule,
@@ -25,13 +26,15 @@ const  matModules: any =[
   ],
   imports: [
     CommonModule,
+    RouterModule,
     matModules
   ],
   exports:[
      PageNotFoundComponent,
      HeaderComponent,
      FooterComponent,
-   matModules
+     RouterModule,
+     matModules
   ]
 })
 export class SharedModule { }
