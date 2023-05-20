@@ -9,7 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 const  matModules: any =[
-   MatSidenavModule, 
+   MatSidenavModule,
    MatButtonModule ,
    MatIconModule,
    MatToolbarModule];
@@ -21,11 +21,12 @@ const  matModules: any =[
   ],
   imports: [
     CommonModule,
-    matModules
+   // matModules
   ],
   exports:[
-    HeaderComponent,
-    FooterComponent,
-    matModules]
+    // HeaderComponent,
+    // FooterComponent,
+   // matModules
+  ]
 })
 export class SharedModule { }
