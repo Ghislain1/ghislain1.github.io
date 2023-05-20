@@ -4,29 +4,34 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const  matModules: any =[
    MatSidenavModule,
    MatButtonModule ,
    MatIconModule,
+   MatSlideToggleModule,
    MatToolbarModule];
 
 @NgModule({
   declarations: [
      HeaderComponent,
-     FooterComponent
+     FooterComponent,
+     PageNotFoundComponent
   ],
   imports: [
     CommonModule,
-   // matModules
+    matModules
   ],
   exports:[
-    // HeaderComponent,
-    // FooterComponent,
-   // matModules
+     PageNotFoundComponent,
+     HeaderComponent,
+     FooterComponent,
+   matModules
   ]
 })
 export class SharedModule { }

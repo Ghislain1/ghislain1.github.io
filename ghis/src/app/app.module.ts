@@ -5,20 +5,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const routes: Routes = [
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
-  },
-  {
-    path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
-  },
 
-  { path: '', redirectTo: '/about', pathMatch: 'full' }
-];
 
 @NgModule({
   declarations: [
@@ -26,10 +18,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes,
-      { enableTracing: true } // <-- debugging purposes only)
-    ),
+    AppRoutingModule,
     SharedModule
   ],
   providers: [],
