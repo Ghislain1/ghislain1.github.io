@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
+    "404":"cd dist && copy index.html 404.html",
     "build:prod": "ng build --configuration production",
-    "build:github-page": "ng build --configuration production --output-path dist --base-href ./",
+    "build:github-page": "ng build --configuration production --output-path dist --base-href ./ && npm run 404",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
