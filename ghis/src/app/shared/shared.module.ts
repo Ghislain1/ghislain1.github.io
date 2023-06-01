@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { RouterModule } from '@angular/router';
+import { Header2Component } from './components/header2/header2.component';
 
 const  matModules: any =[
    MatSidenavModule,
@@ -28,7 +29,8 @@ const  matModules: any =[
   declarations: [
      HeaderComponent,
      FooterComponent,
-     PageNotFoundComponent
+     PageNotFoundComponent,
+     Header2Component
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ const  matModules: any =[
   exports:[
      PageNotFoundComponent,
      HeaderComponent,
+     Header2Component,
      FooterComponent,
      RouterModule,
      matModules

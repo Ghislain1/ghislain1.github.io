@@ -1,9 +1,19 @@
 <!---Flex : https://css-tricks.com/snippets/css/a-guide-to-flexbox/-->
-<div class="flex flex-col min-h-screen">
-  <app-header></app-header>
+
+<body class="font-nunito">
+  <!-- into section -->
+  <div
+    class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden"
+  >
+  <app-header2></app-header2>
   <main class="flex-grow">
     <router-outlet></router-outlet>
   </main>
+
+   <!-- footer -->
+   <div class="w-full bg-gray-800">
+
   <app-footer></app-footer>
 </div>
-
+</div>
+</body>
