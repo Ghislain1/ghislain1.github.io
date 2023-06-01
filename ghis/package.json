@@ -2,10 +2,10 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
+    "404": "cd dist && copy index.html 404.html",
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
-    "404":"cd dist && copy index.html 404.html",
     "build:prod": "ng build --configuration production",
     "build:github-page": "ng build --configuration production --output-path dist --base-href ./ && npm run 404",
     "watch": "ng build --watch --configuration development",
@@ -39,6 +39,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
     "typescript": "~5.0.2"
   }
 }
