@@ -2,7 +2,7 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
-    "404": "cd dist && copy index.html 404.html",
+    "404": "dir && cd dist && copy index.html 404.html",
     "ng": "ng",
     "start": "ng serve --open",
     "build": "ng build",
