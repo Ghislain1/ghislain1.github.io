@@ -6,7 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+
+
   public onToggleSidenav = () => {
+  }
+
+  get activeTheme(): string {
+    return localStorage.getItem('theme') ?? '';
+  }
+
+  theme(theme: string): void {
+    localStorage.setItem('theme', theme);
   }
 
 }
