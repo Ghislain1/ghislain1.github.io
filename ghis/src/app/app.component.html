@@ -1,19 +1,18 @@
-<!---Flex : https://css-tricks.com/snippets/css/a-guide-to-flexbox/-->
-
 <body class="font-nunito">
-  <!-- into section -->
+
   <div
-    class="h-1/2 lg:h-screen bg-gradient-to-t from-green-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden"
-  >
-  <app-header2></app-header2>
-  <main class="flex-grow">
-    <router-outlet></router-outlet>
-  </main>
+    class="h-1/2 lg:h-screen bg-gradient-to-t from-green-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
 
-   <!-- footer -->
-   <div class="w-full bg-gray-800">
+    <div class="grid  grid-rows-3 gap-2 h-56 place-content-stretch">
+      <app-header2 class="shadow-lx"></app-header2>
 
-  <app-footer></app-footer>
-</div>
+      <main class="row-span-full bg-red-100">
+        <router-outlet></router-outlet>
+      </main>
+
+      <app-footer class="row"></app-footer>
+
+    </div>
   </div>
+
 </body>
