@@ -27,6 +27,7 @@
   </mat-toolbar-row>
 </mat-toolbar> -->
 
+<!--
 <mat-toolbar color="primary">
   <button mat-icon-button class="example-icon" aria-label="icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -40,5 +41,39 @@
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
+ -->
 
-
+<nav class="relative container mx-auto p-6">
+  <div class="flex items-center justify-between">
+    <!--LOGO-->
+    <div class="w-5 pt-2">
+      <img src="./assets/imgs/moon.jpg" alt="" />
+    </div>
+    <!--Menu Items-->
+    <div class="hidden md:flex space-x-6">
+      <a routerLink="/home" class="hover:text-fuchsia-900 focus:font-bold">Home</a>
+      <a routerLink="/about" class="hover:text-fuchsia-900 focus:font-bold">About Me</a>
+      <a routerLink="/works" class="hover:text-fuchsia-900 focus:font-bold">Works</a>
+      <a routerLink="/contact" class="hover:text-fuchsia-900 focus:font-bold">Contact</a>
+    </div>
+    <!--Button-->
+    <a class="p-2 text-white  bg-fuchsia-700 rounded-full">
+      Get Started
+    </a>
+    <!--Hambuger ICON-->
+    <button id="menu-btn" class="block hambuger md:hidden focus:outline-none">
+      <span class="hamburger-top"></span>
+      <span class="hamburger-middle"></span>
+      <span class="hamburger-bottom"></span>
+    </button>
+  </div>
+  <div class="md:hidden">
+    <div id="menu"
+      class="absolute flex flex-col items-center self-end hidden py-8 mt-10 space-y-6 font-bold bg-white sm:self-center sm:w-auto">
+      <a routerLink="/home" class="hover:text-fuchsia-900 focus:font-bold">Home</a>
+      <a routerLink="/about" class="hover:text-fuchsia-900 focus:font-bold">About Me</a>
+      <a routerLink="/works" class="hover:text-fuchsia-900 focus:font-bold">Works</a>
+      <a routerLink="/contact" class="hover:text-fuchsia-900 focus:font-bold">Contact</a>
+    </div>
+  </div>
+</nav>

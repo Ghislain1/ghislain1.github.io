@@ -1,18 +1,5 @@
-<body class="font-nunito">
-
-  <div
-    class="h-1/2 lg:h-screen bg-gradient-to-t from-green-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
-
-    <div class="grid  grid-rows-3 gap-2 h-56 place-content-stretch">
-      <app-header2 class="shadow-lx"></app-header2>
-
-      <main class="row-span-full bg-red-100">
-        <router-outlet></router-outlet>
-      </main>
-
-      <app-footer class="row"></app-footer>
-
-    </div>
-  </div>
-
+<body class="font-nunito bg-gradient-to-r from-indigo-100">
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
 </body>

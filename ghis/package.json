@@ -10,6 +10,7 @@
     "build:github-page": "ng build --configuration production --output-path dist --base-href ./ && npm run 404",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "tail":"tailwindcss -i ./src/styles.scss  o- ./dist/ghisStyle.css",
     "lint": "ng lint --force"
   },
   "private": true,
