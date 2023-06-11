@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkghis=self.webpackChunkghis||[]).push([[310],{310:(e,u,s)=>{s.r(u),s.d(u,{WorksModule:()=>r});var l=s(4755),n=s(2504);let r=(()=>{class o{}return o.\u0275fac=function(d){return new(d||o)},o.\u0275mod=n.oAB({type:o}),o.\u0275inj=n.cJS({imports:[l.ez]}),o})()}}]);
