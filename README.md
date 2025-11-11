@@ -12,6 +12,7 @@ https://<user_name>.github.io/<project_name>
 - [Intro](#intro)
 - [Stacks](#stacks)
   - [UI Frameworks](#ui-frameworks)
+- [Questions](#questions)
 # Intro
 My Own Page
 # Stacks
@@ -30,3 +31,10 @@ My Own Page
     - Free to use
     - No dependencies on **JQuery**
     - ng add @ng-bootstrap/ng-bootstrap
+# Questions
+- Do you want to create a 'zoneless' application without zone.js?
+  - zoneless
+  - zone.js
+- Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)
+  - SSR
+  - SSG
