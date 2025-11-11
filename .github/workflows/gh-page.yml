@@ -1,43 +1,42 @@
-name: Angular 22 CI/CD Deploy (See Settings > Pages for more settings)
+name: Build and Deploy Angular App
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # Adjust this to your branch
+
+permissions:
+  contents: write  # Allow pushing to gh-pages branch
 
 jobs:
-  build-and-deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Setup Node.js 24.x
+      - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version: '24.0.0'   # Use Node 24
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci 
 
       - name: Run tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-      - name: Build Angular app (production)
+      - name: Build Angular app
         run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/ghis
-          user_name: 'Ghislain1'
-          user_email: 'gzeleu@outlook.de'
-
-permissions:
-  contents: write
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          build_configuration: production
+          base_href: /ghislain1.github.io/     # Set to your repo name or subpath
+          deploy_branch: gh-pages
+          angular_dist_build_folder: dist/ghislain1.github.io
+          
