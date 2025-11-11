@@ -2,47 +2,46 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
-    "404": " cd dist &&  dir && cp index.html 404.html",
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production",
-    "build:github-page": "ng build --configuration production --output-path dist --base-href ./ && npm run 404",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "tail":"tailwindcss -i ./src/styles.scss  o- ./dist/ghisStyle.css",
-    "lint": "ng lint --force"
+    "test": "ng test"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.0.0",
-    "@angular/cdk": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/forms": "^16.0.0",
-    "@angular/material": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
-    "@angular/router": "^16.0.0",
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.0",
-    "@angular/cli": "~16.0.0",
-    "@angular/compiler-cli": "^16.0.0",
-    "@types/jasmine": "~4.3.0",
-    "jasmine-core": "~4.6.0",
+    "@angular/build": "^20.3.9",
+    "@angular/cli": "^20.3.9",
+    "@angular/compiler-cli": "^20.3.0",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8",
-    "tailwindcss": "^3.3.2",
-    "typescript": "~5.0.2"
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~5.9.2"
   }
 }
