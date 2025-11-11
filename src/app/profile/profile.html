@@ -1,16 +1,20 @@
-<div class="container">
-    <h1>Profile</h1>
-    <div class="divider"></div>
-    <div class="row">
-        <div class="col s12 m6">
-            <h2>Ghis</h2>
-            <img class="responsive-img circle" src="img/ghis.jpg" alt="Ghis Profile Image" width="150" height="150">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m6">
-            <p>Hello! I'm Ghis, a developer with a passion for creating beautiful Apps. I love
-                coding and exploring new technologies.</p>
+<div class="profile-card">
+    <img [src]="profileImage" alt="{{name}}" class="profile-image" />
 
+    <div class="profile-info">
+        <h2 class="name">{{ name }}</h2>
+        <h4 class="title">{{ title }}</h4>
+        <p class="bio">{{ bio }}</p>
+
+        <div class="skills">
+            <span *ngFor="let skill of skills" class="skill-badge hoverable">{{ skill }}</span>
+        </div>
+
+        <div class="social-links">
+            <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer"
+                class="social-icon">
+                <i class="material-icons">{{ social.icon }}</i>
+            </a>
         </div>
     </div>
+</div>

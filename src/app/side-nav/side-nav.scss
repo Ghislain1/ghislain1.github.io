@@ -1,34 +1,25 @@
 .sidenav {
-    background: #263238;
-    padding-left: 0;
-    /* Remove default padding from ul */
-    margin: 0;
-    /* Remove default margin from ul */
+    width: 250px;
+
 }
 
-.sidenav li {
-    margin: 0;
-    /* Remove margin from li */
-    padding-left: 0;
-    /* Optionally adjust li padding */
-}
+
 
 .sidenav .user-view {
     background: #37474f;
 }
 
-.sidenav a,
-.sidenav .subheader,
-.sidenav .white-text {
-    color: #fff !important;
-}
+
 
 .sidenav .divider {
     background-color: #455a64;
 }
 
-.sidenav .bottom-item {
-
-    bottom: 0;
+.sidenav a.collection-item.btn-large {
     width: 100%;
+    margin: 0;
+
+    box-sizing: border-box;
+
+
 }
