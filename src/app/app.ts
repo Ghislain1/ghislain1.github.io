@@ -14,8 +14,8 @@ import { Header } from './header/header';
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    SideNav,
-    Footer
+    SideNav
+
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.scss']

@@ -24,7 +24,7 @@ export class Experience implements OnInit, AfterViewInit {
     },
     {
       position: 'Junior Developer',
-      company: 'Web Solutions',
+      company: 'Tecan AG',
       duration: 'Jun 2018 - Sept 2020',
       description: 'Contributed to front-end UI using WPF and Angular.'
     }
