@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "build:github-page": "ng build --configuration production --output-path dist --base-href ./ && npm run 404",
     "test": "ng test"
   },
   "prettier": {
