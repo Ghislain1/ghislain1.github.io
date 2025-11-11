@@ -1,4 +1,4 @@
-name: Angular 22 CI/CD Deploy
+name: Angular 22 CI/CD Deploy (See Settings > Pages for more settings)
 
 on:
   push:
