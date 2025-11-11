@@ -36,7 +36,7 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
           build_configuration: production
-          base_href: /    # Set to your repo name or subpath
+          base_href: ./    # Set to your repo name or subpath
           deploy_branch: gh-pages
-          angular_dist_build_folder: dist/ghis/ghislain1.github.io
+          angular_dist_build_folder: dist
           
