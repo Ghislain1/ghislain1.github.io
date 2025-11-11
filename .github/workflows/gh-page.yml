@@ -1,68 +1,43 @@
-name: "GitHub Page"
-on: push
-permissions:
-  contents: write # Able to push to master like you want
+name: Angular 22 CI/CD Deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  build_and_updateDocs:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-      
-      - name: SetUp NodeJs
-        uses: actions/setup-node@v4
-        with: 
-          node-version: 22
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Change Working Directory
-        run: |
-             cd ghis
-             ls
-
-      - name: Install Dependencies
-        run: |
-             cd ghis
-             ls
-             npm install
-
-      - name: Build in Production
-        run: |
-             cd ghis
-             ls
-             npm run build:github-page
-        
-      - name: Archive Production Artifacts
-        uses: actions/upload-artifact@v3
+      - name: Setup Node.js 24.x
+        uses: actions/setup-node@v6
         with:
-          name: dist
-          path: ghis/dist
-      
-      - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+          node-version: '24'
+          cache: 'npm'
 
-      - name: Echo current date
-        run : |
-              date > generated.txt 
-              echo $NOW  
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Refresh Docs Folder (using  PUSH)
-        env: 
-          CI_COMMIT_MESSAGE: CI Build Artifacts for Docs
-          CI_COMMIT_AUTHOR: Continuous Integration(CI)
-        run : |
-              ls
-              rm -rf ghis/docs/* 
-              git config  --global user.email gzeleu@outlook.de                     
-              git config  --global user.name Ghislain1 
-              git add .      
-              git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"           
-              cp -vr ghis/dist/* docs                           
-              dir
-              git add .      
-              git commit  -m "${{ env.CI_COMMIT_MESSAGE }}"
-              git push
- 
+      - name: Run tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-            
-        
+      - name: Build Angular app (production)
+        run: npm run build -- --configuration production
 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/your-angular-project-name
+          user_name: 'github-actions'
+          user_email: 'github-actions@github.com'
+
+permissions:
+  contents: write
