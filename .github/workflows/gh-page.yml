@@ -35,7 +35,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/your-angular-project-name
+          publish_dir: ./dist/ghis
           user_name: 'github-actions'
           user_email: 'github-actions@github.com'
 
