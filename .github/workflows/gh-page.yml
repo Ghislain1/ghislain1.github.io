@@ -30,6 +30,7 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
@@ -44,10 +45,9 @@ jobs:
      # - name: Deploy to GitHub Pages
      #   id: deployment
      #   uses: actions/deploy-pages@v4
-
      - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
+       uses: peaceiris/actions-gh-pages@v3
+       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
 
