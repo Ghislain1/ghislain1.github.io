@@ -33,7 +33,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public # 
+          path: ./dist # 
 
   deploy:
     needs: build
@@ -41,11 +41,16 @@ jobs:
       name: github-pages
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+     # - name: Deploy to GitHub Pages
+     #   id: deployment
+     #   uses: actions/deploy-pages@v4
 
-      - name: Deployment END
-        run: echo "Deployment completed."
+     - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+
+ 
 
  
