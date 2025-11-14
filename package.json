@@ -2,7 +2,6 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
-    "build:github-pageXXXX": "ng build --configuration production --output-path dist/ --base-href ./ && npm run 404",
     "build": "npm run clean  && npm run build:scss && npm run build:scripting && npm run build:assets",
     "build:assets": "node scripting/build-assets.js",
     "build:scripting": "node scripting/build-js.js",
