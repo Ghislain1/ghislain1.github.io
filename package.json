@@ -2,15 +2,16 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
-    "build": "npm run clean  && npm run build:scss && npm run build:js && npm run build:assets && npm run build:html",
-    "build:assets": "node scripting/build-assets.js",
-    "build:js": "node scripting/build-js.js",
-    "build:scss": "node scripting/build-scss.js",
-    "clean": "node scripting/clean.js",
-    "build:html": "node scripting/build-html.js",
-    "dev": "concurrently \"npm run watch:scss\" \"npm run serve\"",
-    "serve": "browser-sync start --server 'dist' --files 'dist'",
-    "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run build:scss'"
+    "build:html": "copy src\\index.html dist\\index.html",
+    "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run build:scss'",
+    "sass": "sass src/scss/styles.scss dist/css/styles.css --no-source-map --style=compressed",
+    "sass-dev": "sass --watch src/scss:dist/css --style=expanded",
+    "sass-prod": "sass src/scss:dist/css --no-source-map --style=compressed",
+    "start": "npm run build && live-server dist",
+    "build:scss": "sass --load-path=node_modules src/scss/custom.scss dist/css/custom.css --style=compressed",
+    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=dist/js/bundle.js",
+    "build": "npm run clean && npm run build:scss && npm run build:js && npm run build:html",
+    "clean": "node scripting/clean.js"
   },
   "description": "Elegant resume and CV theme with Bootstrap 5.",
   "keywords": [
@@ -35,13 +36,15 @@
   },
   "private": true,
   "dependencies": {
-    "bootstrap": "5.2.3"
+    "bootstrap": "^5.3.8"
   },
   "devDependencies": {
     "autoprefixer": "10.4.14",
     "browser-sync": "^3.0.4",
-    "chokidar": "3.5.3",
+    "chokidar": "^3.5.3",
     "concurrently": "6.3.0",
+    "esbuild": "^0.27.0",
+    "live-server": "^1.2.0",
     "postcss": "^8.5.6",
     "prettier": "2.8.6",
     "pug": "^3.0.3",
