@@ -9,7 +9,7 @@ permissions:
   contents: write  # Allow pushing to gh-pages branch
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,19 +24,20 @@ jobs:
 
       - name: Install dependencies
         run: npm ci 
+      
+      - name: Build project
+        run: npm run build
 
-      # - name: Run tests
-      #  run: npm run test -- --watch=false --browsers=ChromeHeadless
-
-      # - name: Build Angular app
-      #  run: npm run build:github-page
-
-      - name: Deploy to GitHub Pages
-        uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.1
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-          build_configuration: production
-          base_href: ./    # Set to your repo name or subpath
-          deploy_branch: gh-pages
-          angular_dist_build_folder: dist/browser 
-          
+          path: ./dist # 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Deployment END
+        run: echo "Deployment completed."
