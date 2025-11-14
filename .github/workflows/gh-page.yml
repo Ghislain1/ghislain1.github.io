@@ -7,6 +7,8 @@ on:
 
 permissions:
   contents: write  # Allow pushing to gh-pages branch
+  pages: write    # Allow deploying to GitHub Pages
+  id-token: write  # Allow OIDC token for GitHub Pages
 
 jobs:
   build:
@@ -43,6 +45,5 @@ jobs:
 
       - name: Deployment END
         run: echo "Deployment completed."
-        
-    permissions:
-       contents: write
+
+ 
