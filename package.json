@@ -10,7 +10,7 @@
     "start": "npm run build && node scripting/start.js",
     "start:debug": "npm run build && node scripting/start-debug.js"
   },
-  "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
+  "description": "Elegant resume and CV theme with Bootstrap 5.",
   "keywords": [
     "css",
     "sass",
