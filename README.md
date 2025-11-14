@@ -1,59 +1,75 @@
-# Ghis
+📄 Résumé Website — Static HTML + SCSS
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+A simple, fast, and fully customizable résumé / portfolio website built using HTML, SCSS, and optional Bootstrap.
+This project focuses on clean structure, modular styles, and easy deployment (GitHub Pages, Netlify, etc.).
+🚀 Features
 
-## Development server
+✔️ Fully static — no backend required
+✔️ SCSS with custom variables + partials
+✔️ Responsive layout
+✔️ Easy to customize colors, fonts, and sections
+✔️ Lightweight and fast
+✔️ Ready for GitHub Pages deployment
 
-To start a local development server, run:
+project/
+│
+├─ dist/                 # Compiled production files (created after build)
+│
+├─ src/
+│   ├─ scss/
+│   │   ├─ _variables.scss
+│   │   ├─ _mixins.scss
+│   │   ├─ _layout.scss
+│   │   ├─ _components.scss
+│   │   └─ main.scss     # root SCSS file
+│   │
+│   └─ index.html        # main résumé HTML page
+│
+├─ package.json
+└─ README.md
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+// Variables
+@import "./variables";
 
-## Code scaffolding
+// Mixins
+@import "./mixins";
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+// Base layout styles
+@import "./layout";
 
-```bash
-ng generate component component-name
-```
+// Components (buttons, cards, sections)
+@import "./components";
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+npx sass src/scss/main.scss dist/style.css --watch
 
-## Building
 
-To build the project run:
+'''
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
 
-```bash
-ng build
-```
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: npx sass src/scss/main.scss dist/style.css --style=compressed
 
-## Running unit tests
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
