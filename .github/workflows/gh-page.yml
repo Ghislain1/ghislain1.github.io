@@ -29,6 +29,9 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Check directory contents for debug
+        run: ls -la ./dist
+
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
@@ -40,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Just to play with variables (Step 0)
-        run: echo "The build job ran on ${{deploy.environment.name}}"
+        run: echo "The build job ran on ${{secrets}}"
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
       - name: Display Tree of current directory (Step 2)
@@ -55,7 +58,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
       - name: Just to play with variables (Step 0)
-        run: echo "The build job ran on ${{deploy.environment}}"
+        run: echo "The build job ran on ${{secrets.GITHUB_TOKEN}}"
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
       - name: List Files in  (Step 4)
