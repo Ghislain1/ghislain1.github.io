@@ -48,7 +48,7 @@ jobs:
       - name: List Directories (Step 3)
         run: tree /home/runner/work/ 
       - name: List Files in  (Step 4)
-        run: CD /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
+        run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
   
   deploy:
     needs: build
@@ -63,7 +63,7 @@ jobs:
        uses: peaceiris/actions-gh-pages@v4
        with:
         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-        publish_dir: ./dist
+        publish_dir: ./public # Adjust this if your build output is in a different directory
 
  
 
