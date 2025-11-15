@@ -39,12 +39,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Just to play with variables
-        run: echo "The build job ran on ${{needs.build.runs-on }}"
-      - name: Another step
+      - name: Just to play with variables (Step 0)
+        run: echo "The build job ran on ${{needs.build.runs-on}}"
+      - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
-      - name: Final step
+      - name: Final step (Step 2)
         run: echo "This is the final step in ghislain-job"
+      - name: List files (Step 3)
+        run: ls -la ./dist
   
   deploy:
     needs: build
