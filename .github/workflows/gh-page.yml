@@ -29,22 +29,22 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: CDEBUG - List Files in dist directory
-        run: ls -la ./dist
+      - name: CDEBUG - List Files in docs directory
+        run: ls -la ./docs
 
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist 
+          path: ./docs 
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
          deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-         publish_dir: ./dist # Adjust this if your build output is in a different directory
-      - name: CDEBUG - List Files in dist directory
-        run: ls -la ./dist
+         publish_dir: ./docs # Adjust this if your build output is in a different directory
+      - name: CDEBUG - List Files in docs directory
+        run: ls -la ./docs
 
   upload-job:
     needs: build
@@ -55,7 +55,7 @@ jobs:
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
       - name: List Files in  (Step 2)
-        run: ls -la ./dist
+        run: ls -la ./docs
   
   dansy-job:
      needs: build
@@ -94,6 +94,6 @@ jobs:
         run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
       - name: CURRENT DIRECTORY (Step 5)
         run: pwd
-      - name: FInd dist directory (Step 6)
-        run:  find . -type d -name "dist"
+      - name: FInd docs directory (Step 6)
+        run:  find . -type d -name "docs"
  
