@@ -38,22 +38,7 @@ jobs:
         with:
           path: ./dist # 
 
-  ghislain-job:
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Just to play with variables (Step 0)
-        run: echo "The build job ran on ${{secrets}}"
-      - name: Another step to play with secrets (Step 1)
-        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
-      - name: Display Tree of current directory (Step 2)
-        run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
-      - name: List Directories (Step 3)
-        run: tree /home/runner/work/ 
-      - name: List Files in  (Step 4)
-        run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
-      - name: Check directory contents for debug
-        run: ls -la ./dist
+
   
   dansy-job:
      needs: build
@@ -82,5 +67,20 @@ jobs:
         publish_dir: ./dist # Adjust this if your build output is in a different directory
 
  
-
+  ghislain-job:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just to play with variables (Step 0)
+        run: echo "The build job ran on ${{secrets}}"
+      - name: Another step to play with secrets (Step 1)
+        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
+      - name: Display Tree of current directory (Step 2)
+        run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
+      - name: List Directories (Step 3)
+        run: tree /home/runner/work/ 
+      - name: List Files in  (Step 4)
+        run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
+      - name: Check directory contents for debug
+        run: ls -la ./home/runner/work/ghislain1.github.io/ghislain1.github.io/dist
  
