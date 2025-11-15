@@ -66,7 +66,7 @@ jobs:
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
       - name: List Files in  (Step 2)
-        run: ls -la ./dist
+        run: ls -la ./
 
   deploy-test:
     needs: build
@@ -95,5 +95,5 @@ jobs:
       - name: CURRENT DIRECTORY (Step 5)
         run: pwd
       - name: FInd dist directory (Step 6)
-        run:  cd.. && find . -type d -name "dist"
+        run:  find . -type d -name "dist"
  
