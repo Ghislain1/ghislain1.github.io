@@ -36,11 +36,11 @@ jobs:
           path: ./dist # 
 
   ghislain-job:
-    needs: build
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Just to play with variables (Step 0)
-        run: echo "The build job ran on ${{needs.build.runs-on}}"
+        run: echo "The build job ran on ${{deploy.environment.name}}"
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
       - name: Display Tree of current directory (Step 2)
@@ -50,6 +50,17 @@ jobs:
       - name: List Files in  (Step 4)
         run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
   
+  dansy-job:
+     needs: build
+     runs-on: ubuntu-latest
+     steps:
+      - name: Just to play with variables (Step 0)
+        run: echo "The build job ran on ${{deploy.environment}}"
+      - name: Another step to play with secrets (Step 1)
+        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
+      - name: List Files in  (Step 4)
+        run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls 
+
   deploy:
     needs: build
     environment:
