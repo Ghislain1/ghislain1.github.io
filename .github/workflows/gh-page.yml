@@ -29,7 +29,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Check directory contents for debug
+      - name: CDEBUG - List Files in dist directory
         run: ls -la ./dist
 
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)
@@ -37,11 +37,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist 
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
          deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
          publish_dir: ./dist # Adjust this if your build output is in a different directory
+      - name: CDEBUG - List Files in dist directory
+        run: ls -la ./dist
 
   upload-job:
     needs: build
@@ -65,24 +68,18 @@ jobs:
       - name: List Files in  (Step 2)
         run: ls -la ./dist
 
-  deploy:
+  deploy-test:
     needs: build
     environment:
       name: github-pages
     runs-on: ubuntu-latest
     steps:
-     # - name: Deploy to GitHub Pages
-     #   id: deployment
-     #   uses: actions/deploy-pages@v4
-     - name: Deploy to GitHub Pages
-       uses: peaceiris/actions-gh-pages@v4
-       with:
-        deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-        publish_dir: ./dist # Adjust this if your build output is in a different directory
+      - name: Just to play with variables (Step 0)
+        run: echo "The build job ran on ${{secrets}}"
 
  
   ghislain-job:
-    needs: deploy
+    needs: deploy-test
     runs-on: ubuntu-latest
     steps:
       - name: Just to play with variables (Step 0)
@@ -90,7 +87,7 @@ jobs:
       - name: List ALL (Step 1)
         run: tree ./
       - name: Display Tree of current directory (Step 2)
-        run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
+        run:  pwd  
       - name: List Directories (Step 3)
         run: tree /home/runner/work/ 
       - name: List Files in  (Step 4)
