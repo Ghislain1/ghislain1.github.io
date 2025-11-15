@@ -44,9 +44,9 @@ jobs:
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
       - name: Display Tree of current directory (Step 2)
-        run:  pwd && tree -L 4
-      - name: List files (Step 3)
-        run: ls  
+        run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
+      - name: List Directories (Step 3)
+        run: tree /home/runner/work/ 
   
   deploy:
     needs: build
@@ -60,7 +60,7 @@ jobs:
      - name: Deploy to GitHub Pages
        uses: peaceiris/actions-gh-pages@v4
        with:
-        deploy_key: ${{secrets.ACTION_DEPLOY_KEY}}
+        deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
         publish_dir: ./dist
 
  
