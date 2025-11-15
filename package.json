@@ -2,6 +2,7 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
+    "404": "cp src/index.html docs/404.html",
     "build-dev:html": "copy src\\index.html docs\\index.html",
     "build-pro:html": "cp src/index.html docs/index.html",
     "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run build:scss'",
@@ -12,7 +13,7 @@
     "build:scss": "sass --load-path=node_modules src/scss/custom.scss docs/css/custom.css --style=compressed",
     "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/bundle.js",
     "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html",
-    "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html",
+    "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html && npm run 404",
     "clean": "node scripting/clean.js"
   },
   "description": "Elegant resume and CV theme with Bootstrap 5.",
