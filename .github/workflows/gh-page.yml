@@ -55,7 +55,7 @@ jobs:
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
       - name: List Files in  (Step 2)
-        run: ls -la ./docs
+        run: ls -la ./
   
   dansy-job:
      needs: build
