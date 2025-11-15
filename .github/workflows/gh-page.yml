@@ -13,7 +13,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -36,6 +35,17 @@ jobs:
         with:
           path: ./dist # 
 
+  ghislain-job:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just to play with variables
+        run: echo "The build job ran on ${{needs.build.runs-on }}"
+      - name: Another step
+        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
+      - name: Final step
+        run: echo "This is the final step in ghislain-job"
+  
   deploy:
     needs: build
     environment:
@@ -46,7 +56,7 @@ jobs:
      #   id: deployment
      #   uses: actions/deploy-pages@v4
      - name: Deploy to GitHub Pages
-       uses: peaceiris/actions-gh-pages@v3
+       uses: peaceiris/actions-gh-pages@v4
        with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./
