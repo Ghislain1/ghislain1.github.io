@@ -2,6 +2,7 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
+    "assets": "xcopy  src\\assets\\img docs\\img ",
     "404": "cp src/index.html docs/404.html",
     "build-dev:html": "copy src\\index.html docs\\index.html",
     "build-pro:html": "cp src/index.html docs/index.html",
@@ -9,10 +10,10 @@
     "sass": "sass src/scss/styles.scss docs/css/styles.css --no-source-map --style=compressed",
     "sass-dev": "sass --watch src/scss:docs/css --style=expanded",
     "sass-prod": "sass src/scss:docs/css --no-source-map --style=compressed",
-    "start": "npm run build-dev && npm run build-dev:html && live-server docs",
+    "start": "npm run build-dev && npm run build-dev:html && live-server docs --watch=docs",
     "build:scss": "sass --load-path=node_modules src/scss/custom.scss docs/css/custom.css --style=compressed",
     "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/bundle.js",
-    "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html",
+    "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
     "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html && npm run 404",
     "clean": "node scripting/clean.js"
   },

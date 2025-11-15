@@ -30,4 +30,15 @@
 // Sections
 //@import "./_sections/_resume-section.scss";
 $primary: #ff6600;
+$navbar-base-height: 4rem;
+$sidebar-base-width: 15rem;
 @import "../../node_modules/bootstrap/scss/bootstrap";
+// Global CSS
+@import "./_global.scss";
+
+// Components
+@import "./_components/_sidenav.scss";
+@import "./_components/_icons.scss";
+
+// Sections
+@import "./_sections/_resume-section.scss";
