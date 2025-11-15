@@ -12,7 +12,7 @@
     "sass-prod": "sass src/scss:docs/css --no-source-map --style=compressed",
     "start": "npm run build-dev && npm run build-dev:html && live-server docs --watch=docs",
     "build:scss": "sass --load-path=node_modules src/scss/custom.scss docs/css/custom.css --style=compressed",
-    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/bundle.js",
+    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/scripts.js",
     "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
     "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html && npm run 404",
     "clean": "node scripting/clean.js"

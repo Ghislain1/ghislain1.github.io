@@ -5,6 +5,8 @@
 #sideNav {
     padding-left: 1rem;
     padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
 
     .navbar-nav .nav-item .nav-link {
         font-weight: 800;

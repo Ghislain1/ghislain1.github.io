@@ -1,0 +1,1 @@
+(()=>{window.addEventListener("DOMContentLoaded",o=>{let t=document.body.querySelector("#sideNav"),e=document.body.querySelector(".navbar-toggler");[].slice.call(document.querySelectorAll("#navbarResponsive .nav-link")).map(function(n){n.addEventListener("click",()=>{window.getComputedStyle(e).display!=="none"&&e.click()})})});})();
