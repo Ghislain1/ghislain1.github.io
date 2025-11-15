@@ -43,10 +43,10 @@ jobs:
         run: echo "The build job ran on ${{needs.build.runs-on}}"
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
-      - name: Final step (Step 2)
-        run: echo "This is the final step in ghislain-job"
+      - name: Display Tree of current directory (Step 2)
+        run:  pwd && tree -L 4
       - name: List files (Step 3)
-        run: ls -la ./dist
+        run: ls  
   
   deploy:
     needs: build
