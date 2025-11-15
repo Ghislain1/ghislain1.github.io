@@ -36,9 +36,23 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # 
+          path: ./dist 
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
+         publish_dir: ./dist # Adjust this if your build output is in a different directory
 
-
+  upload-job:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Just to play with variables (Step 0)
+        run: echo "The build job ran on ${{secrets.GITHUB_TOKEN}}"
+      - name: Another step to play with secrets (Step 1)
+        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
+      - name: List Files in  (Step 2)
+        run: ls -la ./dist
   
   dansy-job:
      needs: build
