@@ -48,8 +48,8 @@ jobs:
         run: echo "The build job ran on ${{secrets.GITHUB_TOKEN}}"
       - name: Another step to play with secrets (Step 1)
         run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"           
-      - name: List Files in  (Step 4)
-        run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls 
+      - name: List Files in  (Step 2)
+        run: ls -la ./dist
 
   deploy:
     needs: build
@@ -64,7 +64,7 @@ jobs:
        uses: peaceiris/actions-gh-pages@v4
        with:
         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-        publish_dir: ./home/runner/work/ghislain1.github.io/ghislain1.github.io/dist # Adjust this if your build output is in a different directory
+        publish_dir: ./dist # Adjust this if your build output is in a different directory
 
  
   ghislain-job:
