@@ -47,6 +47,8 @@ jobs:
         run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
       - name: List Directories (Step 3)
         run: tree /home/runner/work/ 
+      - name: List Files in  (Step 4)
+        run: CD /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
   
   deploy:
     needs: build
