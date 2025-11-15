@@ -2,7 +2,7 @@
   "name": "ghis",
   "version": "0.0.0",
   "scripts": {
-    "assets": "xcopy  src\\assets\\img docs\\img ",
+    "assets": "xcopy  src\\assets\\ docs\\assets\\ /E /H /C /I /Y",
     "404": "cp src/index.html docs/404.html",
     "build-dev:html": "copy src\\index.html docs\\index.html",
     "build-pro:html": "cp src/index.html docs/index.html",

@@ -3,35 +3,21 @@
 // 
 
 // Import variables
-//@import "./_variables.scss";
+@import "./_variables/_colors.scss";
+@import "./_variables/_typography.scss";
+@import "./_variables/_spacing.scss";
 
 
 // 2️⃣ Import Bootstrap functions first
-//@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/functions";
 
 // 3️⃣ Import only the Bootstrap parts you need
-//@import "../../node_modules/bootstrap/scss/variables";
-//@import "../../node_modules/bootstrap/scss/mixins";
-
-// Optional components you want
-//@import "node_modules/bootstrap/scss/grid";
-//@import "../../node_modules/bootstrap/scss/buttons";
-//@import "../../node_modules/bootstrap/scss/forms";
-//@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
 
-// Global CSS
-//@import "./_global.scss";
 
-// Components
-//@import "./_components/_sidenav.scss";
-//@import "./_components/_icons.scss";
 
-// Sections
-//@import "./_sections/_resume-section.scss";
-$primary: #ff6600;
-$navbar-base-height: 4rem;
-$sidebar-base-width: 15rem;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 // Global CSS
 @import "./_global.scss";
