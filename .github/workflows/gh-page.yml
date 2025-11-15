@@ -52,6 +52,8 @@ jobs:
         run: tree /home/runner/work/ 
       - name: List Files in  (Step 4)
         run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
+      - name: Check directory contents for debug
+        run: ls -la ./dist
   
   dansy-job:
      needs: build
