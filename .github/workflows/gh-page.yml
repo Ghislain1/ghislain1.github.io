@@ -64,7 +64,7 @@ jobs:
        uses: peaceiris/actions-gh-pages@v4
        with:
         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-        publish_dir: ./dist # Adjust this if your build output is in a different directory
+        publish_dir: ./home/runner/work/ghislain1.github.io/ghislain1.github.io/dist # Adjust this if your build output is in a different directory
 
  
   ghislain-job:
@@ -81,6 +81,8 @@ jobs:
         run: tree /home/runner/work/ 
       - name: List Files in  (Step 4)
         run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
-      - name: Check directory contents for debug
-        run: ls -la ./home/runner/work/ghislain1.github.io/ghislain1.github.io/dist
+      - name: CURRENT DIRECTORY
+        run: pwd
+      - name: FInd dist directory
+        run:  find . -type d -name "dist"
  
