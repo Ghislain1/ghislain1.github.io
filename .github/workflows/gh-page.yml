@@ -73,16 +73,16 @@ jobs:
     steps:
       - name: Just to play with variables (Step 0)
         run: echo "The build job ran on ${{secrets}}"
-      - name: Another step to play with secrets (Step 1)
-        run: echo "GITHUB_TOKEN  ${{secrets.GITHUB_TOKEN}}"
+      - name: List ALL (Step 1)
+        run: tree ./
       - name: Display Tree of current directory (Step 2)
         run:  pwd && tree /home/runner/work/ghislain1.github.io/ghislain1.github.io
       - name: List Directories (Step 3)
         run: tree /home/runner/work/ 
       - name: List Files in  (Step 4)
         run: cd /home/runner/work/ghislain1.github.io/ghislain1.github.io && ls -laR
-      - name: CURRENT DIRECTORY
+      - name: CURRENT DIRECTORY (Step 5)
         run: pwd
-      - name: FInd dist directory
-        run:  find . -type d -name "dist"
+      - name: FInd dist directory (Step 6)
+        run:  cd.. && find . -type d -name "dist"
  
