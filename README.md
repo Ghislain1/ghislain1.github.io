@@ -28,6 +28,15 @@ project/
 ├─ package.json
 └─ README.md
 
+# Development
+## Getting started
+- Open code in VS Code
+- run script start
+
+## Google Tag Manager
+- Access to your website
+- Conversion-Tracking
+- Basis for Optimazation
 
 // Variables
 @import "./variables";
