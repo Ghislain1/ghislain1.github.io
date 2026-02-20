@@ -15,7 +15,7 @@
     "build:scss": "sass --load-path=node_modules src/scss/custom.scss docs/css/custom.css --style=compressed",
     "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/scripts.js",
     "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
-    "dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets ",
+    "dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
     "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html && cd src &&  npm run 404",
     "clean": "node scripting/clean.js"
   },
