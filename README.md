@@ -29,6 +29,9 @@ project/
 └─ README.md
 
 # Development
+- Just improve or add feature and push to github: 
+  - Magic: develop update automatically
+  - npm run  dev
 ## Getting started
 - Open code in VS Code
 - run script start
