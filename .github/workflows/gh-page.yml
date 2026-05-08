@@ -32,7 +32,7 @@ jobs:
       
       - name: Configure Git (fix "Author unknown")
         run: |
-          git config --global user.name "github-actions[bot] - (fix "Author unknown")"
+          git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)  
