@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve --open",
-    "deploy": "ng build --base-href='https://Ghislain1.github.io/' && angular-cli-ghpages --dir=dist/ghislain-resume/browser",
+    "deploy": "ng build --base-href='/' && angular-cli-ghpages --dir=dist/ghislain-resume/browser",
     "clean": "rimraf dist"
   },
   "description": "Elegant resume and CV theme with Bootstrap 5.",
