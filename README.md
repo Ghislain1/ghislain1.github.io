@@ -11,22 +11,7 @@ This project focuses on clean structure, modular styles, and easy deployment (Gi
 ✔️ Lightweight and fast
 ✔️ Ready for GitHub Pages deployment
 
-project/
-│
-├─ dist/                 # Compiled production files (created after build)
-│
-├─ src/
-│   ├─ scss/
-│   │   ├─ _variables.scss
-│   │   ├─ _mixins.scss
-│   │   ├─ _layout.scss
-│   │   ├─ _components.scss
-│   │   └─ main.scss     # root SCSS file
-│   │
-│   └─ index.html        # main résumé HTML page
-│
-├─ package.json
-└─ README.md
+ 
 
 # Development
 - Just improve or add feature and push to github: 
@@ -85,3 +70,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/deploy-pages@v4
+
+# Deployement
+- Go to Settings from GitHub
+  - Select Pages
+  - Source: Deploy from a branch
+  - Branch:   
+    - which branch  > gh-pages 
+    - root > should content index.html
+- Go to Actions from GitHub
+  - All actions are listed from workflows directory
+  - 
