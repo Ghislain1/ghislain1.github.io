@@ -35,14 +35,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       
-      # 🔥 IMPORTANT: set git identity BEFORE ghpages runs      
-  
+      # 🔥 IMPORTANT:    secrets.GITHUB_TOKEN   
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)  
       # Steps: 
       - name: GitHub Pages (This updates the gh-pages branch automatically)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
-        run: npm run deploy -- --repo=https://x-access-token:${GH_TOKEN}@github.com/Ghislain1/ghislain1.github.io.git # Adjust this if your build output is in a different directory
+        run: npm run deploy # Adjust this if your build output is in a different directory
 
   upload-job:
     needs: build
