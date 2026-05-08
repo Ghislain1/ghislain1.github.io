@@ -30,11 +30,6 @@ jobs:
       - name: Build project
         run: npm run build  -- --configuration production --base-href /
       
-      - name: Configure Git (fix "Author unknown")
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      
       # 🔥 IMPORTANT:    secrets.GITHUB_TOKEN   
       # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)  
       # Steps: 

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,6 +10,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  protected sidebarService = inject(SidebarService);
+
   navLinks = [
     { path: '/', fragment: 'about', label: 'About', icon: 'fas fa-user' },
     { path: '/experience', fragment: '', label: 'Experience', icon: 'fas fa-briefcase' },

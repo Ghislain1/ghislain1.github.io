@@ -1,5 +1,9 @@
-<nav class="sidebar">
-  <a class="sidebar-brand" href="#page-top">
+<nav class="sidebar" [class.open]="sidebarService.isOpen()">
+  <button class="sidebar-toggle btn btn-link" (click)="sidebarService.toggle()" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <a class="sidebar-brand" href="#page-top" (click)="sidebarService.close()">
     <img
       class="img-fluid img-profile rounded-circle mx-auto mb-3"
       width="150"
@@ -16,6 +20,7 @@
         [routerLink]="link.path" 
         [fragment]="link.fragment"
         routerLinkActive="active"
+        (click)="sidebarService.close()"
       >
         <i [class]="link.icon + ' me-2'"></i>
         {{ link.label }}
@@ -32,3 +37,7 @@
     }
   </div>
 </nav>
+
+@if (sidebarService.isOpen()) {
+  <div class="sidebar-backdrop" (click)="sidebarService.close()"></div>
+}

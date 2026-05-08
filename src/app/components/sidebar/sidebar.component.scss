@@ -1,3 +1,19 @@
+.sidebar-toggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -11,6 +27,7 @@
   padding: 2rem 1rem;
   z-index: 1030;
   overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 
 .sidebar-brand {
@@ -75,5 +92,27 @@
 
   &:hover {
     color: white;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1029;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
