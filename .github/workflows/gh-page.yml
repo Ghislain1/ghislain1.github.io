@@ -34,8 +34,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          # 🔥 IMPORTANT: set git identity BEFORE ghpages runs
       
+      # 🔥 IMPORTANT: set git identity BEFORE ghpages runs      
       - name: Configure Git identity
         run: |
           git config --global user.name "github-actions[bot]"
