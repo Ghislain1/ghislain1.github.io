@@ -3,21 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "assets": "xcopy  src\\assets\\ docs\\assets\\ /E /H /C /I /Y",
-    "404": "cp src/index.html docs/404.html",
-    "build-dev:html": "copy src\\index.html docs\\index.html",
-    "build-pro:html": "cp src/index.html docs/index.html",
-    "watch:scss": "chokidar 'src/scss/**/*.scss' -c 'npm run build:scss'",
-    "sass": "sass src/scss/styles.scss docs/css/styles.css --no-source-map --style=compressed",
-    "sass-dev": "sass --watch src/scss:docs/css --style=expanded",
-    "sass-prod": "sass src/scss:docs/css --no-source-map --style=compressed",
-    "start": "npm run build-dev && npm run build-dev:html && live-server docs --watch=docs",
-    "build:scss": "sass --load-path=node_modules src/scss/custom.scss docs/css/custom.css --style=compressed",
-    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=docs/js/scripts.js",
-    "build-dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
-    "dev": "npm run clean && npm run build:scss && npm run build:js && npm run build-dev:html && npm run assets",
-    "build": "npm run clean && npm run build:scss && npm run build:js && npm run build-pro:html && cd src &&  npm run 404",
-    "clean": "node scripting/clean.js"
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "serve": "ng serve --open",
+    "clean": "rimraf dist"
   },
   "description": "Elegant resume and CV theme with Bootstrap 5.",
   "keywords": [
@@ -45,6 +35,9 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
+    "@angular/build": "^21.2.9",
+    "@angular/cli": "^21.2.9",
+    "@angular/compiler-cli": "^21.2.11",
     "autoprefixer": "10.4.14",
     "browser-sync": "^3.0.4",
     "chokidar": "^3.5.3",
@@ -54,8 +47,10 @@
     "postcss": "^8.5.6",
     "prettier": "2.8.6",
     "pug": "^3.0.3",
+    "rimraf": "^6.1.3",
     "sass": "1.60.0",
     "shelljs": "0.8.5",
+    "typescript": "^5.9.3",
     "upath": "2.0.1"
   }
 }

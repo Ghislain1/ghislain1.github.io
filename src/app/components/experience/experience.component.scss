@@ -1,0 +1,96 @@
+:host {
+  display: block;
+}
+
+.resume-section-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.section-title {
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid var(--primary-color);
+  
+  i {
+    color: var(--primary-color);
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.experience-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 12px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.subheading {
+  color: var(--text-light);
+  font-weight: 500;
+  
+  .company-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+}
+
+.description {
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.period-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 20px;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

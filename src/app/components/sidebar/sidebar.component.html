@@ -1,0 +1,34 @@
+<nav class="sidebar">
+  <a class="sidebar-brand" href="#page-top">
+    <img
+      class="img-fluid img-profile rounded-circle mx-auto mb-3"
+      width="150"
+      src="assets/img/profile.jpg"
+      alt="Profile"
+    />
+  </a>
+
+  <ul class="nav flex-column">
+    @for (link of navLinks; track link.label) {
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [routerLink]="link.path" 
+        [fragment]="link.fragment"
+        routerLinkActive="active"
+      >
+        <i [class]="link.icon + ' me-2'"></i>
+        {{ link.label }}
+      </a>
+    </li>
+    }
+  </ul>
+  
+  <div class="social-icons mt-auto">
+    @for (link of socialLinks; track link.url) {
+    <a class="social-icon" [href]="link.url" target="_blank" rel="noopener noreferrer">
+      <i [class]="link.icon"></i>
+    </a>
+    }
+  </div>
+</nav>

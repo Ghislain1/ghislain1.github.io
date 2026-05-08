@@ -1,0 +1,51 @@
+<section class="resume-section" id="about">
+  <div class="resume-section-content">
+    <div class="row align-items-center">
+      <div class="col-lg-4 text-center mb-4 mb-lg-0">
+        <div class="profile-wrapper">
+          <img
+            class="img-fluid img-profile rounded-circle mx-auto mb-3"
+            src="assets/img/profile.jpg"
+            alt="Profile"
+            width="250"
+          />
+          <div class="profile-ring"></div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <h1 class="mb-0 text-gradient">
+          {{ name }}
+          <span class="text-primary">{{ surname }}</span>
+        </h1>
+        
+        <div class="subheading mb-4">
+          <i class="fas fa-map-marker-alt me-2"></i>
+          {{ location }}
+        </div>
+        
+        <div class="contact-info mb-4">
+          <a href="mailto:{{ email }}" class="glass-btn">
+            <i class="fas fa-envelope me-2"></i>
+            {{ email }}
+          </a>
+        </div>
+
+        @for (item of description; track item.icon) {
+        <div class="description-item">
+          <i [class]="item.icon + ' description-icon'"></i>
+          <p class="lead">{{ item.text }}</p>
+        </div>
+        }
+
+        <div class="social-icons mt-4">
+          @for (link of socialLinks; track link.url) {
+          <a class="social-icon" [href]="link.url" target="_blank" rel="noopener noreferrer">
+            <i [class]="link.icon"></i>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

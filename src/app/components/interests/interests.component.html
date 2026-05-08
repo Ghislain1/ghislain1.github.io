@@ -1,0 +1,38 @@
+<section class="resume-section" id="interests">
+  <div class="resume-section-content">
+    <h2 class="mb-5 section-title">
+      <i class="fas fa-heart me-3"></i>
+      Interests
+    </h2>
+    
+    <div class="row">
+      @for (interest of interests; track interest.icon) {
+      <div class="col-md-6 mb-4">
+        <div class="interest-card glass-card" [style.--accent-color]="interest.color">
+          <div class="interest-icon" [style.background]="interest.color">
+            <i [class]="interest.icon"></i>
+          </div>
+          <p class="interest-text">{{ interest.text }}</p>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="hobbies-section mt-5">
+      <h3 class="category-title mb-4">
+        <i class="fas fa-star me-2"></i>
+        Hobbies
+      </h3>
+      <div class="hobby-icons">
+        @for (hobby of hobbies; track hobby.icon) {
+        <div class="hobby-item">
+          <div class="hobby-icon-wrapper">
+            <i [class]="hobby.icon"></i>
+          </div>
+          <span class="hobby-label">{{ hobby.label }}</span>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
