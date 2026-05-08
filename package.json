@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build  -- --configuration production --base-href /",
     "watch": "ng build --watch --configuration development",
     "serve": "ng serve --open",
-    "deploy": "ng build --base-href='/' && angular-cli-ghpages --dir=dist/ghislain-resume/browser",
+    "deploy": "ng build --base-href='/' && angular-cli-ghpages --dir=dist/ghislain-resume/browser --no-silent",
     "clean": "rimraf dist"
   },
   "description": "Elegant resume and CV theme with Bootstrap 5.",
