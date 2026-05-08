@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   build:
+    name: Build-Production
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -28,27 +29,11 @@ jobs:
       
       - name: Build project
         run: npm run build
-
-      - name: DEBUG - List Files in docs directory
-        run: ls -la ./docs
-
-      # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)
-      - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./docs 
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-         deploy_key: ${{secrets.ACTIONS_DEPLOY_KEY}}
-         publish_dir: ./docs # Adjust this if your build output is in a different directory
-     
-      - name: DEBUG - List Files in docs directory
-        run: tree ./docs
-        # Steps: 
+        
+      # On GitHub Pages, the default publishing directory is root.(WE CAN SEE IT IN SETTINGS > PAGES)  
+      # Steps: 
       - name: GitHub Pages (This updates the gh-pages branch automatically)
-        run: npm run deploy
+        run: npm run deploy # Adjust this if your build output is in a different directory
 
   upload-job:
     needs: build
