@@ -80,4 +80,7 @@ jobs:
     - root > should content index.html
 - Go to Actions from GitHub
   - All actions are listed from workflows directory
-  - 
+  - no all
+- Install GitHub Pages deploy tool
+  - npm install --save-dev angular-cli-ghpages
+  - check deploy script

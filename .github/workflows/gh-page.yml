@@ -46,6 +46,9 @@ jobs:
      
       - name: DEBUG - List Files in docs directory
         run: tree ./docs
+        # Steps: 
+      - name: GitHub Pages (This updates the gh-pages branch automatically)
+        run: npm run deploy
 
   upload-job:
     needs: build
